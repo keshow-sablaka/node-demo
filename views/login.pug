@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="styles.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+        script(src="script.js")
+        title Sign Up
+    body
+        div(id="form-div") 
+            form(class="form-horizontal", action="/", method="POST", id="login-form")
+                input(type="hidden", name="csrf", value=csrf_token)
+                div(class="form-group", id="fname-div")
+                    label(for="fname", id="fname-label", class="control-label col-sm-2") First Name:
+                    div(class="col-sm-10", id="fname-input-div")
+                        input(type="text", class="form-control", id="fname")           
+                div(class="form-group", id="lname-div")
+                    label(for="lname", id="lname-label", class="control-label col-sm-2") Last Name:
+                    div(class="col-sm-10", id="lname-input-div")
+                        input(type="text", class="form-control", id="lname")            
+                div(class="form-group", id="password-div")
+                    label(for="password", id="password-label", class="control-label col-sm-2") Password:
+                    div(class="col-sm-10", id="password-input-div")
+                        input(type="password", class="form-control", id="password")
+                div(class="form-group", id="gender-div")
+                    label(for="gender-radio-group", id="gender-label", class="control-label col-sm-2") Gender:       
+                    div(class="col-sm-10", id="gender-radio-group")
+                        div(class="radio", id="gender-radio-div")
+                            label(class="radio-inline", id="gender-male-label")
+                                input(type="radio", name="gender", id="gender-male-radio", value="1")
+                                | Male
+                            label(class="radio-inline", id="gender-female-div")
+                                input(type="radio" name="gender", id="gender-female-radio", value="2")
+                                | Female    
+                div(class="form-group", id="submit-button-div")
+                    div(class="col-sm-offset-2 col-sm-10", id="submit-div")
+                        button(type="button", class="btn btn-default", id="submit-form") Submit
